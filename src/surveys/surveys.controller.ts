@@ -8,5 +8,6 @@ import { SurveysService } from './surveys.service';
 })
 @Controller('surveys')
 export class SurveysController implements CrudController<Survey> {
-    public service: SurveysService;
+    constructor(public service: SurveysService) {}
 }
+
