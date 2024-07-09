@@ -1,8 +1,10 @@
 {
-  "install-command": "npm install --force",
   "version": 2,
   "builds": [
     {
+      "config": {
+        "install-command": "npm install --force"
+      },
       "src": "package.json",
       "use": "@vercel/node"
     
