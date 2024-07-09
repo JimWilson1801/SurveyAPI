@@ -1,0 +1,14 @@
+// {
+//     "$schema": "https://railway.app/railway.schema.json",
+//     "install": {
+//       "installCommand": "npm install --force",
+//       },
+//     "routes": [
+//           {
+//             "src": "/(.*)",
+//             "dest": "dist/main.js",
+//             "methods": ["GET", "POST", "PUT", "PATCH", "DELETE", "HEAD", "OPTIONS"]
+//           }
+//         ]
+  
+// }
