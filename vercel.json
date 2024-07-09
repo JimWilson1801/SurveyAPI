@@ -1,15 +1,15 @@
 {
   "version": 2,
-//   "builds": [
-//     {
-//       "config": {
-//         "installCommand": "npm run install-force"
-//       },
-//       "src": "package.json",
-//       "use": "@vercel/node"
+  "builds": [
+    {
+      "config": {
+        "installCommand": "npm run install-force"
+      },
+      "src": "package.json",
+      "use": "@vercel/node"
     
-//     }
-//   ],
+    }
+  ],
   "routes": [
     {
       "src": "/(.*)",
