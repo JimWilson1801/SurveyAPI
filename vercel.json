@@ -5,7 +5,7 @@
       "config": {
         "install-command": "npm install --force"
       },
-     "src": "src/main.js",
+     "src": "src/main.ts",
       "use": "@vercel/node"
     
     }
