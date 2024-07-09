@@ -1,5 +1,6 @@
 {
-  "compilerOptions": {
+   "currentTeam": "jimwilson1301s-projects",
+    "compilerOptions": {
     "module": "commonjs",
     "declaration": true,
     "removeComments": true,

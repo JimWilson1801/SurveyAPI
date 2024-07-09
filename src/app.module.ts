@@ -8,11 +8,11 @@ import { SurveysModule } from './surveys/surveys.module';
 @Module({
   imports: [ TypeOrmModule.forRoot({
     type: 'mysql',
-    host: 'localhost',
-    port: 3306,
-    username: 'root',
-    password: 'root',
-    database: 'surveydb',
+    host: 'mysql-231391b9-dinhit1801-3fbc.g.aivencloud.com',
+    port: 22590,
+    username: 'avnadmin',
+    password: 'AVNS_I2gPfzsT4nLoIGwTAHV',
+    database: 'defaultdb',
     entities: [User,Survey],
     synchronize: true,
   }), UsersModule, SurveysModule,],
