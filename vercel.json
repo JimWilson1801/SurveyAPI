@@ -1,5 +1,5 @@
 {
-  "installCommand": "npm run install --force",
+  "installCommand": "npm install --force",
   "version": 2,
   "builds": [
     {
