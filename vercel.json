@@ -1,19 +1,18 @@
-{
+{   
     "version": 2,
-    "builds": [
-      {
-        "src": "dist/main.js",
-        "use": "@vercel/node",
-        "config": {
-            "install-command": "npm install --force"
+    "installCommand": "npm install --force",
+    "devCommand": "nest build",
+        "builds": [
+          {
+            "src": "dist/main.js",
+            "use": "@vercel/node"
           }
-      }
-    ],
-    "routes": [
-      {
-        "src": "/(.*)",
-        "dest": "dist/main.js",
-        "methods": ["GET", "POST", "PUT", "PATCH", "DELETE", "HEAD", "OPTIONS"]
-      }
-    ]
+        ],
+        "routes": [
+          {
+            "src": "/(.*)",
+            "dest": "dist/main.js",
+            "methods": ["GET", "POST", "PUT", "PATCH", "DELETE", "HEAD", "OPTIONS"]
+          }
+        ]
 }
