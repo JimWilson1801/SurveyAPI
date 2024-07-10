@@ -11,7 +11,6 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Survey = void 0;
 const typeorm_1 = require("typeorm");
-const user_entity_1 = require("./user.entity");
 const swagger_1 = require("@nestjs/swagger");
 let Survey = class Survey {
 };
@@ -22,14 +21,14 @@ __decorate([
 ], Survey.prototype, "id", void 0);
 __decorate([
     (0, swagger_1.ApiProperty)(),
-    (0, typeorm_1.ManyToOne)(() => user_entity_1.User, { nullable: true }),
-    __metadata("design:type", user_entity_1.User)
-], Survey.prototype, "sendUser", void 0);
+    (0, typeorm_1.Column)({ length: 255 }),
+    __metadata("design:type", String)
+], Survey.prototype, "sendEmail", void 0);
 __decorate([
     (0, swagger_1.ApiProperty)(),
-    (0, typeorm_1.ManyToOne)(() => user_entity_1.User, { nullable: true }),
-    __metadata("design:type", user_entity_1.User)
-], Survey.prototype, "replyUser", void 0);
+    (0, typeorm_1.Column)({ length: 255 }),
+    __metadata("design:type", String)
+], Survey.prototype, "replyEmail", void 0);
 __decorate([
     (0, swagger_1.ApiProperty)(),
     (0, typeorm_1.Column)({ length: 255 }),

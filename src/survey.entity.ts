@@ -9,12 +9,12 @@ export class Survey {
     id: string;
 
     @ApiProperty()
-    @ManyToOne(() => User, { nullable: true })
-    sendUser: User;
+    @Column({ length: 255 })
+    sendEmail: string;
 
     @ApiProperty()
-    @ManyToOne(() => User, { nullable: true })
-    replyUser: User;
+    @Column({ length: 255 })
+    replyEmail: string;
 
     @ApiProperty()
     @Column({ length: 255 })
