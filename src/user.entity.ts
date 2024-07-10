@@ -15,10 +15,6 @@ export class User {
     password: string;
 
     @ApiProperty()
-    @Column({ length: 255 })
-    email: string;
-    
-    @ApiProperty()
     @Column({ default: false })
     isAdmin: boolean;
 }
