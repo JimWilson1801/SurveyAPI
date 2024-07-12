@@ -9,4 +9,16 @@ export class UsersService extends TypeOrmCrudService<User> {
     constructor (@InjectRepository(User) repo: Repository<User>){
         super(repo)
     }
+    async findOneByUsername(username: string): Promise<User | undefined> {
+        return this.repo.findOne({ where: { username } });
+    }
+    async validateUser(username: string, pass: string): Promise<any> {
+        const user = await this.findOneByUsername(username);
+        if (user &&  (pass == user.password)) {
+          const { password, ...result } = user;
+          return result;
+        }
+        return null;
+    }
+
 }

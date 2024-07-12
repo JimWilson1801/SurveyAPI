@@ -4,6 +4,8 @@ import { Survey } from './survey.entity';
 import { User } from './user.entity';
 import { UsersModule } from './users/users.module';
 import { SurveysModule } from './surveys/surveys.module';
+import { AuthModule } from './auth/auth.module';
+import { AppController } from './app.controller';
 
 @Module({
   imports: [ TypeOrmModule.forRoot({
@@ -15,6 +17,7 @@ import { SurveysModule } from './surveys/surveys.module';
     database: 'defaultdb',
     entities: [User,Survey],
     synchronize: true,
-  }), UsersModule, SurveysModule,],
+  }), UsersModule, SurveysModule, AuthModule,],
+  controllers: [AppController],
 })
 export class AppModule {}

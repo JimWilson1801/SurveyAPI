@@ -12,32 +12,24 @@ var __param = (this && this.__param) || function (paramIndex, decorator) {
     return function (target, key) { decorator(target, key, paramIndex); }
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.UsersService = void 0;
+exports.AppController = void 0;
 const common_1 = require("@nestjs/common");
-const typeorm_1 = require("@nestjs/typeorm");
-const crud_typeorm_1 = require("@nestjsx/crud-typeorm");
-const user_entity_1 = require("../user.entity");
-const typeorm_2 = require("typeorm");
-let UsersService = class UsersService extends crud_typeorm_1.TypeOrmCrudService {
-    constructor(repo) {
-        super(repo);
-    }
-    async findOneByUsername(username) {
-        return this.repo.findOne({ where: { username } });
-    }
-    async validateUser(username, pass) {
-        const user = await this.findOneByUsername(username);
-        if (user && (pass == user.password)) {
-            const { password, ...result } = user;
-            return result;
-        }
-        return null;
+const passport_1 = require("@nestjs/passport");
+let AppController = class AppController {
+    async login(req) {
+        return req.user;
     }
 };
-exports.UsersService = UsersService;
-exports.UsersService = UsersService = __decorate([
-    (0, common_1.Injectable)(),
-    __param(0, (0, typeorm_1.InjectRepository)(user_entity_1.User)),
-    __metadata("design:paramtypes", [typeorm_2.Repository])
-], UsersService);
-//# sourceMappingURL=users.service.js.map
+exports.AppController = AppController;
+__decorate([
+    (0, common_1.UseGuards)((0, passport_1.AuthGuard)('local')),
+    (0, common_1.Post)('auth/login'),
+    __param(0, (0, common_1.Request)()),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [Object]),
+    __metadata("design:returntype", Promise)
+], AppController.prototype, "login", null);
+exports.AppController = AppController = __decorate([
+    (0, common_1.Controller)()
+], AppController);
+//# sourceMappingURL=app.controller.js.map

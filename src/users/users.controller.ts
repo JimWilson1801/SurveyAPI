@@ -1,4 +1,4 @@
-import { Controller } from '@nestjs/common';
+import { Controller, Get, Param } from '@nestjs/common';
 import { Crud, CrudController } from '@nestjsx/crud';
 import { User } from 'src/user.entity';
 import { UsersService } from './users.service';
@@ -11,4 +11,11 @@ import { UsersService } from './users.service';
 @Controller('users')
 export class UsersController implements CrudController<User> {
     constructor(public service: UsersService) {}
+    
+    
+//   @Get(':id')
+//   findOne(@Param('id') id: string) {
+//     return UsersService.findOne(+id);
+//   }
+
 }

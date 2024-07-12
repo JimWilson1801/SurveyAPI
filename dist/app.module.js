@@ -13,6 +13,8 @@ const survey_entity_1 = require("./survey.entity");
 const user_entity_1 = require("./user.entity");
 const users_module_1 = require("./users/users.module");
 const surveys_module_1 = require("./surveys/surveys.module");
+const auth_module_1 = require("./auth/auth.module");
+const app_controller_1 = require("./app.controller");
 let AppModule = class AppModule {
 };
 exports.AppModule = AppModule;
@@ -27,7 +29,8 @@ exports.AppModule = AppModule = __decorate([
                 database: 'defaultdb',
                 entities: [user_entity_1.User, survey_entity_1.Survey],
                 synchronize: true,
-            }), users_module_1.UsersModule, surveys_module_1.SurveysModule,],
+            }), users_module_1.UsersModule, surveys_module_1.SurveysModule, auth_module_1.AuthModule,],
+        controllers: [app_controller_1.AppController],
     })
 ], AppModule);
 //# sourceMappingURL=app.module.js.map

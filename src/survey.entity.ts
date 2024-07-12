@@ -9,11 +9,11 @@ export class Survey {
     id: string;
 
     @ApiProperty()
-    @Column({ length: 255 })
+    @Column({ length: 255 , nullable: true })
     sendEmail: string;
 
     @ApiProperty()
-    @Column({ length: 255 })
+    @Column({ length: 255 , nullable: true })
     replyEmail: string;
 
     @ApiProperty()
